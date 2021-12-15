@@ -625,10 +625,10 @@ react@^17.0.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-reactive_essays@^1.1.0-1:
-  version "1.1.0-1"
-  resolved "https://registry.yarnpkg.com/reactive_essays/-/reactive_essays-1.1.0-1.tgz#4687ec469f4fa02c92e643432c57b83aa778d8ef"
-  integrity sha512-emJHrk1bRuj2PHWTcGbiTstG9z0EIQzz8ty9SZlDjzI8lNqFan0NzHEBnWR9GcdxKwFw5yDstw/aFLps/XOHoQ==
+reactive_essays@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/reactive_essays/-/reactive_essays-1.1.1.tgz#253dd42bc0b7d97a08cf2eed97ba8fc0194d41ce"
+  integrity sha512-3srFll4NkUJjQt4vee40G59l4tbtup4QZxq08CMSjOSHTUA2XAyt48P61/b3S+1xUsr+CUWn/q1KbH8YgKQLXA==
   dependencies:
     react "^17.0.2"
 

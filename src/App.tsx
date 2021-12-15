@@ -5,12 +5,12 @@ import {
     People,
     Value,
     Output,
-    If
+    If,
 } from "reactive_essays";
 import "reactive_essays/styles/styles.css";
 
 const WORLD_POPULATION = 7_910_000_000;
-const HUNGRY_PEOPLE    =   881_000_000;
+const HUNGRY_PEOPLE = 881_000_000;
 
 const getGMOInfo = (data: any) => {
     return Number(
@@ -122,11 +122,13 @@ function App() {
                     </a>
                     . People are so caught up in the fear of GMOs that they
                     don’t look at the truth. It’s the vicious cycle of fear,
-                    which has become a huge problem in trying to solve the issue
-                    of malnutrition. According to a survey conducted by a
-                    pro-GMO group, seven out of ten consumers are positive that
-                    they have no idea what in the world GMOs even are. This
-                    problem needs to be solved. Here is why:
+                    when someone is scared, which causes another person to be
+                    scared, which causes the first person to, and so on, which
+                    has become a huge problem in trying to solve the issue of
+                    malnutrition. According to a survey conducted by a pro-GMO
+                    group, seven out of ten consumers are positive that they
+                    have no idea what in the world GMOs even are. This problem
+                    needs to be solved. Here is why:
                 </div>
                 <br />
                 <div>
@@ -188,12 +190,35 @@ function App() {
                                     return (o / 7.19) * 100 - 100;
                                 }}
                             />{" "}
-                            increase in food production. This equates to <Output refs={["cropgrowincrease", "gmointegration"]} getValue={(data) => {
-
-                                const increase = Math.round(data.cropgrowincrease as number) / 100;
-                                const integration = Math.round(data.gmointegration as number) / 100;
-                                return Math.round((HUNGRY_PEOPLE - (HUNGRY_PEOPLE / (1 + ((1 + increase) * integration)))) / 100000) /10;
-                            }} getActualUnit={()=>("million less hungry people")}/>. Either way you chose your numbers—that’s a lot. We could save a lot of lives with this strategy.
+                            increase in food production. This equates to{" "}
+                            <Output
+                                refs={["cropgrowincrease", "gmointegration"]}
+                                getValue={(data) => {
+                                    const increase =
+                                        Math.round(
+                                            data.cropgrowincrease as number
+                                        ) / 100;
+                                    const integration =
+                                        Math.round(
+                                            data.gmointegration as number
+                                        ) / 100;
+                                    return (
+                                        Math.round(
+                                            (HUNGRY_PEOPLE -
+                                                HUNGRY_PEOPLE /
+                                                    (1 +
+                                                        (1 + increase) *
+                                                            integration)) /
+                                                100000
+                                        ) / 10
+                                    );
+                                }}
+                                getActualUnit={() =>
+                                    "million less hungry people"
+                                }
+                            />
+                            . Either way you chose your numbers—that’s a lot. We
+                            could save a lot of lives with this strategy.
                         </If>
                     </Section>
                     Also, now that it’s genetically modified, the plants can be
@@ -333,6 +358,37 @@ function App() {
                     we can conclude that using genetic modifications on plants
                     to their full potential can clearly have a positive effect
                     on our society and our environment.
+                </p>
+                <hr />
+                <h2>Works Cited</h2>
+                <p>
+                    <a href="https://www.pewresearch.org/fact-tank/2020/03/18/about-half-of-u-s-adults-are-wary-of-health-effects-of-genetically-modified-foods-but-many-also-see-advantages/">
+                        About half of U.S. adults are wary of health effects of
+                        genetically modified foods, but many also see advantages
+                    </a>{" "}
+                    - Pew Research Center 18/3/20
+                    <br />
+                    <a href="https://www.nbcnews.com/mach/science/plant-scientists-have-found-way-hack-photosynthesis-here-s-why-ncna956706">
+                        Plant scientists have found a way to 'hack'
+                        photosynthesis. Here's why that's a big deal.
+                    </a>{" "}
+                    - NBC News (University of Illinois) 10/6/19
+                    <br />
+                    <a href="https://gmoanswers.com/gmos-environment">
+                        How do GMOs Affect the Environment? | Benefits of GMO
+                    </a>{" "}
+                    - GMOAnswers.com
+                    <br />
+                    <a href="https://www.pgeconomics.co.uk/pdf/2016globalimpactstudymay2016.pdf">
+                        GM Crops: Global Socio-Economic and Environmental
+                        Impacts 1996-2014
+                    </a>{" "}
+                    - Graham Brookes &amp; Peter Barfoot March ‘18
+                    <br />
+                    <a href="https://allianceforscience.cornell.edu/blog/2018/06/unfairly-demonized-gmo-crops-can-help-fight-malnutrition/">
+                        Unfairly demonized GMO crops can help fight malnutrition
+                    </a>{" "}
+                    - Daniel Norero 20/6/18
                 </p>
             </article>
         </REApp>
